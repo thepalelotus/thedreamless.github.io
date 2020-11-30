@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: Test Post!
 date: 2020-11-30
 ---
