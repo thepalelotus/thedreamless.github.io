@@ -1,3 +1,5 @@
 theme: jekyll-theme-midnight
 title: The Dreamless
 description: Waiting...
+
+permalink: /blog/:year/:month/:day/:title
