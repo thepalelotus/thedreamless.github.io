@@ -4,7 +4,7 @@ body {
     background-color: #002b36; 
 }
 code {
-    background-color: eee8d5;
+    background-color: #eee8d5;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -26,7 +26,7 @@ a:hover {
 h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    color: 
+    color: #cb4b16;
 }
 p {
     font-size: 1.5em;
