@@ -23,7 +23,7 @@ a {
 a:hover {
     text-decoration: underline;
 }
-h1 {
+h1, h2, h3, h4 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     color: #cb4b16;
