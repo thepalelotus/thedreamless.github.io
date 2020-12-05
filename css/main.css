@@ -4,7 +4,7 @@ body {
     background-color: #002b36; 
 }
 code {
-    background-color: #eee8d5;
+    color: #eee8d5;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
