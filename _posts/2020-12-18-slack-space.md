@@ -16,7 +16,6 @@ Now we can start by making a file that we will use to hide data using the `echo`
 eris@fnord:~/TestChamber$ echo "This will be the file we hide our data in." > slackSpace.txt
 eris@fnord:~/TestChamber$ cat slackSpace.txt 
 This will be the file we hide our data in.
-eris@fnord:~/TestChamber$ 
 ```
 
 From the above output we made a file containing some text and named it `slackSpace.txt`. 
@@ -40,10 +39,10 @@ stuffing block 4751464
 file size was: 43
 slack size: 4053
 block size: 4096
-eris@fnord:~/TestChamber$ echo slackSpace.txt
-slackSpace.txt
+
 eris@fnord:~/TestChamber$ cat slackSpace.txt 
 This will be the file we hide our data in.
+
 eris@fnord:~/TestChamber$ ls -l slackSpace.txt 
 -rw-rw-r-- 1 eris eris 43 Oct 22 11:30 slackSpace.txt
 ```
