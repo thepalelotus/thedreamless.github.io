@@ -1,6 +1,6 @@
-# Slack Space
+# What is Slack Space?
 
-File Slack, also called ‘slack space’, is the leftover space on a drive  where a file is stored. This space remains empty or left over because  each cluster on a disk has a storage threshold and files are random  sizes. Therefore, the files only fill a part of the hard drive portion. 
+File Slack, also called 'slack space', is the leftover space on a drive where a file is stored. This space remains empty or left over because each cluster on a disk has a storage threshold and files are of varying sizes. Therefore, the files only fill a part of the hard drive portion. 
 
 ## How to Utilize File Slack
 
