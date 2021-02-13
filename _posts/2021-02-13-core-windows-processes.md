@@ -11,7 +11,6 @@ Windows runs this process as part of the **SYSTEM** user account, so it’s alwa
 ### A Quick Glance
 
 - **PID**: 0
-
 - **Parent Process**: None
 - **Child Processes**: None
 - **User**: NT AUTHORITY\SYSTEM (S-1-5-18)
@@ -29,7 +28,6 @@ The **System** process is created by `ntoskrnl.exe` via the process manager func
 ### A Quick Glance
 
 - **PID**: 4
-
 - **Parent Process**: None
 - **Child Processes**: None
 - **User**: NT AUTHORITY\SYSTEM (S-1-5-18)
@@ -43,7 +41,6 @@ As stated in the previous section, this process is spawned from the **System** t
 ### A Quick Glance
 
 - **PID**: Random
-
 - **Parent Process**: System
 - **Child Processes**: `SMSS.EXE` (**Session 0**), `SMSS.EXE` (**Session 1**), `AUTOCHK.EXE` and a new `SMSS.EXE` instance for each new session
 - **User**: NT AUTHORITY\SYSTEM (S-1-5-18)
@@ -59,7 +56,6 @@ An instance of `csrss.exe` will run for each session. **Session 0** is for servi
 ### A Quick Glance
 
 - **PID**: Random
-
 - **Parent Process**: Orphan process (Parent was the `SMSS.EXE` child process of the master `SMSS.EXE`)
 - **Child Processes**: None
 - **User**: NT AUTHORITY\SYSTEM (S-1-5-18)
@@ -73,7 +69,6 @@ This process is important as it is responsible for launching the Windows Initial
 ### A Quick Glance
 
 - **PID**: Random
-
 - **Parent Process**: Orphan process (Parent was the **Sessions 0** `SMSS.EXE` during boot)
 - **Child Processes**: `services.exe`, `lsass.exe`, `fontdrvhost.exe`
 - **User**: NT AUTHORITY\SYSTEM (S-1-5-18)
@@ -87,7 +82,6 @@ This process manages the operation of starting and stopping services. It also de
 ### A Quick Glance
 
 - **PID**: Random
-
 - **Parent Process**: `wininit.exe`
 - **Child Processes**: Multiple (Any services defined in `HKLM/SYSTEM/CurrentControlSet/Services/`. For example: `spoolsv.exe`, `svchost.exe`, `SearchIndexer.exe`, …etc.)
 - **User**: NT AUTHORITY\SYSTEM (S-1-5-18)
@@ -103,7 +97,6 @@ Look at it like this, if all services ran under a single process, and the proces
 ### A Quick Glance
 
 - **PID**: Random
-
 - **Parent Process**: `services.exe`
 - **Child Processes**: Multiple (Depends on the services being launched.)
 - **User**: Multiple (NT AUTHORITY\SYSTEM, NT AUTHORITY\LOCAL SERVICE, NT AUTHORITY\NETWORK SERVICE…etc.)
@@ -117,7 +110,6 @@ This process is responsible for enforcing the security policy on the system. It 
 ### A Quick Glance
 
 - **PID**: Random
-
 - **Parent Process**: `wininit.exe`
 - **Child Processes**: None (Excluding password filters)
 - **User**: NT AUTHORITY\SYSTEM (S-1-5-18)
@@ -135,7 +127,6 @@ This process also monitors for mouse and keyboard activity and will lock the scr
 ### A Quick Glance
 
 - **PID**: Random
-
 - **Parent Process**: `Orphan process (Parent was the `SMSS.EXE` child process with session > 0)`
 - **Child Processes**: “LogonUI.exe”, “userinit.exe”, “dwm.exe”, “fontdrvhost.exe” and anything else listed in the “Userinit” value
 - **User**: NT AUTHORITY\SYSTEM (S-1-5-18)
@@ -149,7 +140,6 @@ This is the process that gives the user access to their folders and  files. It a
 ### A Quick Glance
 
 - **PID**: Random
-
 - **Parent Process**: Orphan process (Parent was the “userinit.exe” process)
 - **Child Processes**: Multiple processes
 - **User**: Logged on user
