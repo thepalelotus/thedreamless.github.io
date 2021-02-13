@@ -10,12 +10,12 @@ Windows runs this process as part of the **SYSTEM** user account, so it’s alwa
 
 ### A Quick Glance
 
-- **PID**: 0
-- **Parent Process**: None
-- **Child Processes**: None
-- **User**: NT AUTHORITY\SYSTEM (S-1-5-18)
-- **Image**: None
-- **Number of Instances**: 1
+- **PID**: `0`
+- **Parent Process**: `None`
+- **Child Processes**: `None`
+- **User**: `NT AUTHORITY\SYSTEM (S-1-5-18)`
+- **Image**: `None`
+- **Number of Instances**: `1`
 
 ## System 
 
@@ -27,12 +27,12 @@ The **System** process is created by `ntoskrnl.exe` via the process manager func
 
 ### A Quick Glance
 
-- **PID**: 4
-- **Parent Process**: None
-- **Child Processes**: None
-- **User**: NT AUTHORITY\SYSTEM (S-1-5-18)
+- **PID**: `4`
+- **Parent Process**: `None`
+- **Child Processes**: `None`
+- **User**: `NT AUTHORITY\SYSTEM (S-1-5-18)`
 - **Image**: `%Systemroot%\System32\ntoskrnl.exe` (Task Manager / Process Hacker) and `None` (Process Explorer)
-- **Number of Instances**: 1
+- **Number of Instances**: `1`
 
 ## Session Manager Subsystem (smss.exe)
 
@@ -40,12 +40,12 @@ As stated in the previous section, this process is spawned from the **System** t
 
 ### A Quick Glance
 
-- **PID**: Random
-- **Parent Process**: System
+- **PID**: `Random`
+- **Parent Process**: `System`
 - **Child Processes**: `SMSS.EXE` (**Session 0**), `SMSS.EXE` (**Session 1**), `AUTOCHK.EXE` and a new `SMSS.EXE` instance for each new session
-- **User**: NT AUTHORITY\SYSTEM (S-1-5-18)
-- **Image**: %Systemroot%\System32\smss.exe
-- **Number of Instances**: Multiple during boot-up and only one without arguments after boot-up.
+- **User**: `NT AUTHORITY\SYSTEM (S-1-5-18)`
+- **Image**: `%Systemroot%\System32\smss.exe`
+- **Number of Instances**: `Multiple during boot-up and only one without arguments after boot-up.`
 
 ## Client Server Runtime Process (csrss.exe)
 
@@ -55,12 +55,12 @@ An instance of `csrss.exe` will run for each session. **Session 0** is for servi
 
 ### A Quick Glance
 
-- **PID**: Random
-- **Parent Process**: Orphan process (Parent was the `SMSS.EXE` child process of the master `SMSS.EXE`)
-- **Child Processes**: None
-- **User**: NT AUTHORITY\SYSTEM (S-1-5-18)
-- **Image**: %Systemroot%\System32\csrss.exe
-- **Number of Instances**: One for each session. You should find at least two on any running system, one for **Session 0** and another for **Session 1**
+- **PID**: `Random`
+- **Parent Process**: `Orphan process` (Parent was the `SMSS.EXE` child process of the master `SMSS.EXE`)
+- **Child Processes**: `None`
+- **User**: `NT AUTHORITY\SYSTEM (S-1-5-18)`
+- **Image**: `%Systemroot%\System32\csrss.exe`
+- **Number of Instances**: `One for each session. You should find at least two on any running system, one for **Session 0** and another for **Session 1**`
 
 ## Windows Initialization Process (wininit.exe)
 
@@ -68,12 +68,12 @@ This process is important as it is responsible for launching the Windows Initial
 
 ### A Quick Glance
 
-- **PID**: Random
-- **Parent Process**: Orphan process (Parent was the **Sessions 0** `SMSS.EXE` during boot)
+- **PID**: `Random`
+- **Parent Process**: `Orphan process` (Parent was the **Sessions 0** `SMSS.EXE` during boot)
 - **Child Processes**: `services.exe`, `lsass.exe`, `fontdrvhost.exe`
-- **User**: NT AUTHORITY\SYSTEM (S-1-5-18)
-- **Image**: %Systemroot%\System32\wininit.exe
-- **Number of Instances**: 1
+- **User**: `NT AUTHORITY\SYSTEM (S-1-5-18)`
+- **Image**: `%Systemroot%\System32\wininit.exe`
+- **Number of Instances**: `1`
 
 ## Service Control Manager (services.exe)
 
@@ -81,12 +81,12 @@ This process manages the operation of starting and stopping services. It also de
 
 ### A Quick Glance
 
-- **PID**: Random
+- **PID**: `Random`
 - **Parent Process**: `wininit.exe`
-- **Child Processes**: Multiple (Any services defined in `HKLM/SYSTEM/CurrentControlSet/Services/`. For example: `spoolsv.exe`, `svchost.exe`, `SearchIndexer.exe`, …etc.)
-- **User**: NT AUTHORITY\SYSTEM (S-1-5-18)
-- **Image**: %Systemroot%\System32\services.exe
-- **Number of Instances**: 1
+- **Child Processes**: `Multiple` (Any services defined in `HKLM/SYSTEM/CurrentControlSet/Services/`. For example: `spoolsv.exe`, `svchost.exe`, `SearchIndexer.exe`, …etc.)
+- **User**: `NT AUTHORITY\SYSTEM (S-1-5-18)`
+- **Image**: `%Systemroot%\System32\services.exe`
+- **Number of Instances**: `1`
 
 ## Service Host Process (svchost.exe)
 
@@ -96,12 +96,12 @@ Look at it like this, if all services ran under a single process, and the proces
 
 ### A Quick Glance
 
-- **PID**: Random
+- **PID**: `Random`
 - **Parent Process**: `services.exe`
-- **Child Processes**: Multiple (Depends on the services being launched.)
-- **User**: Multiple (NT AUTHORITY\SYSTEM, NT AUTHORITY\LOCAL SERVICE, NT AUTHORITY\NETWORK SERVICE…etc.)
-- **Image**: %Systemroot%\System32\svchost.exe
-- **Number of Instances**: Multiple
+- **Child Processes**: `Multiple` (Depends on the services being launched.)
+- **User**: `Multiple` (NT AUTHORITY\SYSTEM, NT AUTHORITY\LOCAL SERVICE, NT AUTHORITY\NETWORK SERVICE…etc.)
+- **Image**: `%Systemroot%\System32\svchost.exe`
+- **Number of Instances**: `Multiple`
 
 ## Local Security Authority Subsystem Service (lsass.exe)
 
@@ -109,12 +109,12 @@ This process is responsible for enforcing the security policy on the system. It 
 
 ### A Quick Glance
 
-- **PID**: Random
+- **PID**: `Random`
 - **Parent Process**: `wininit.exe`
-- **Child Processes**: None (Excluding password filters)
-- **User**: NT AUTHORITY\SYSTEM (S-1-5-18)
-- **Image**: %Systemroot%\System32\lsass.exe
-- **Number of Instances**: 1
+- **Child Processes**: `None` (Excluding password filters)
+- **User**: `NT AUTHORITY\SYSTEM (S-1-5-18)`
+- **Image**: `%Systemroot%\System32\lsass.exe`
+- **Number of Instances**: `1`
 
 ## Windows Logon (winlogon.exe)
 
@@ -126,12 +126,12 @@ This process also monitors for mouse and keyboard activity and will lock the scr
 
 ### A Quick Glance
 
-- **PID**: Random
+- **PID**: `Random`
 - **Parent Process**: `Orphan process (Parent was the `SMSS.EXE` child process with session > 0)`
-- **Child Processes**: “LogonUI.exe”, “userinit.exe”, “dwm.exe”, “fontdrvhost.exe” and anything else listed in the “Userinit” value
-- **User**: NT AUTHORITY\SYSTEM (S-1-5-18)
-- **Image**: %Systemroot%\System32\winlogon.exe
-- **Number of Instances**: One for each user session
+- **Child Processes**: `LogonUI.exe`, `userinit.exe`, `dwm.exe`, `fontdrvhost.exe` and anything else listed in the `Userinit` value
+- **User**: `NT AUTHORITY\SYSTEM (S-1-5-18)`
+- **Image**: `%Systemroot%\System32\winlogon.exe`
+- **Number of Instances**: `One for each user session`
 
 ##  Windows/File Explorer (explorer.exe)
 
@@ -139,9 +139,9 @@ This is the process that gives the user access to their folders and  files. It a
 
 ### A Quick Glance
 
-- **PID**: Random
-- **Parent Process**: Orphan process (Parent was the “userinit.exe” process)
-- **Child Processes**: Multiple processes
-- **User**: Logged on user
-- **Image**: %Systemroot%\System32\explorer.exe
-- **Number of Instances**: 1 for each user connected on the machine.
+- **PID**: `Random`
+- **Parent Process**: `Orphan process` (Parent was the `userinit.exe` process)
+- **Child Processes**: `Multiple processes`
+- **User**: `Logged on user`
+- **Image**: `%Systemroot%\System32\explorer.exe`
+- **Number of Instances**: `1 for each user connected on the machine.`
