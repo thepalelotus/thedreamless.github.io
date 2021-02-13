@@ -6,7 +6,7 @@ The following guide will serve as a short introduction to understanding the base
 
 You may have noticed this process appears to be using +50% of your CPU -- don't worry there isn't anything going wrong. The *System Idle Process* is exactly what it sounds like; an idling process made by the operating system. The reason for it's operation is to keep the processor occupied with something, else your system might freeze.
 
-Windows runs this process as part of the **SYSTEM** user account, so it’s always active in the background while Windows is running. The **PID** (Process ID) of this should always be **0**.
+Windows runs this process as part of the `SYSTEM` user account, so it’s always active in the background while Windows is running. The `PID` (Process ID) of this should always be `0`.
 
 ### A Quick Glance
 
@@ -19,11 +19,11 @@ Windows runs this process as part of the **SYSTEM** user account, so it’s alwa
 
 ## System 
 
-The **System** “process” is a special kind of process that hosts threads that only run in kernel mode. Modules run under **System** are primarily drivers (.sys files), but also  several important DLLs as well as the kernel executable, `ntoskrnl.exe`.
+The `System` “process” is a special kind of process that hosts threads that only run in kernel mode. Modules run under `System` are primarily drivers (.sys files), but also  several important DLLs as well as the kernel executable, `ntoskrnl.exe`.
 
 If you aren't sure what *user mode* and *kernel mode*, follow [this](https://docs.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode) to get more information.
 
-The **System** process is created by `ntoskrnl.exe` via the process manager function, which creates and terminates processes and threads. There should be no visible parent processes; it's **PID** should always be **4**; and should only be found running in **Session 0**. This process should only have one running instance and one of it's most important jobs is spawning the `smss.exe` process.
+The **System** process is created by `ntoskrnl.exe` via the process manager function, which creates and terminates processes and threads. There should be no visible parent processes; it's `PID` should always be `4`; and should only be found running in **Session 0**. This process should only have one running instance and one of it's most important jobs is spawning the `smss.exe` process.
 
 ### A Quick Glance
 
@@ -36,7 +36,7 @@ The **System** process is created by `ntoskrnl.exe` via the process manager func
 
 ## Session Manager Subsystem (smss.exe)
 
-As stated in the previous section, this process is spawned from the **System** thread. It is responsible for creating new sessions. This is the first user-mode process started by the kernel and handles creating lists of environment variables, starting user sessions -- creating two instances of itself. The first instance being in **Session 0**, which will handle spawning the `wininit.exe` process, while the latter will be spawned in **Session 1** and will represent the first logged-on user, and create the `winlogon.exe`. Both of these instances will spawn their own `csrss.exe` process.
+As stated in the previous section, this process is spawned from the `System` thread. It is responsible for creating new sessions. This is the first user-mode process started by the kernel and handles creating lists of environment variables, starting user sessions -- creating two instances of itself. The first instance being in **Session 0**, which will handle spawning the `wininit.exe` process, while the latter will be spawned in **Session 1** and will represent the first logged-on user, and create the `winlogon.exe`. Both of these instances will spawn their own `csrss.exe` process.
 
 ### A Quick Glance
 
